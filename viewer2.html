@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-  body { background: #1a1a1c; padding: 15px; border-radius: 12px; margin: 0; overflow: hidden; }
-  .header-tabs { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
-  .tab-btn { border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer; }
+  body { background: #1a1a1c; padding: 12px; border-radius: 12px; margin: 0; overflow: hidden; }
+  
+  /* Chuyển tab sang trái để không bị nút Edit/Delete của Panoee che */
+  .header-tabs { display: flex; justify-content: flex-start; gap: 8px; margin-bottom: 10px; padding-left: 4px; }
+  .tab-btn { border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
   .tab-btn.active { background: #8b2323; color: #fff; }
   .tab-btn.inactive { background: #2c2c2e; color: #adadad; }
   
