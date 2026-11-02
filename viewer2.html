@@ -4,41 +4,44 @@
 <meta charset="utf-8">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-  body { background: #1a1a1c; padding: 12px; border-radius: 12px; margin: 0; overflow: hidden; }
+  /* Khống chế body chiếm tối đa 100% màn hình pop-up */
+  html, body { width: 100%; height: 100vh; background: #1a1a1c; overflow: hidden; }
+  body { padding: 6px; display: flex; flex-direction: column; }
   
-  /* Chuyển tab sang trái để không bị nút Edit/Delete của Panoee che */
-  .header-tabs { display: flex; justify-content: flex-start; gap: 8px; margin-bottom: 10px; padding-left: 4px; }
-  .tab-btn { border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
-  .tab-btn.active { background: #8b2323; color: #fff; }
-  .tab-btn.inactive { background: #2c2c2e; color: #adadad; }
+  .header-tabs { display: flex; justify-content: flex-start; margin-bottom: 6px; padding-left: 2px; }
+  .tab-btn { border: none; padding: 4px 14px; border-radius: 15px; font-weight: bold; font-size: 11px; background: #8b2323; color: #fff; }
   
+  /* Khung chứa tự co giãn linh hoạt theo Pop-up Panoee */
   .viewer-container { 
+    flex: 1;
     background: radial-gradient(circle at center, #3d3d42 0%, #252529 55%, #161618 100%); 
-    border-radius: 12px; 
+    border-radius: 10px; 
     position: relative; 
     width: 100%; 
-    height: 600px; 
     overflow: hidden; 
   }
   
   model-viewer { width: 100%; height: 100%; background: transparent; }
-  .hint-badge { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.12); padding: 5px 16px; border-radius: 15px; font-size: 11px; color: #e5e5e5; pointer-events: none; }
+  .hint-badge { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.12); padding: 3px 12px; border-radius: 12px; font-size: 10px; color: #e5e5e5; pointer-events: none; }
 </style>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
 </head>
 <body>
   <div class="header-tabs">
-    <button class="tab-btn inactive">MÔ HÌNH 3D NHÀ</button>
+    <button class="tab-btn">MÔ HÌNH 3D NHÀ BÀ THƯ</button>
   </div>
   <div class="viewer-container">
     <model-viewer 
       src="https://raw.githubusercontent.com/minhtam1105/Mohinhnha3d/main/interior%20room%203d%20model.glb" 
-      alt="Mô hình 3D Nhà bà Thư" 
+      alt="Mô hình 3D" 
       auto-rotate 
       camera-controls 
+      camera-orbit="0deg 75deg 130%"
+      field-of-view="55deg"
       shadow-intensity="1.5"
       exposure="1.1">
     </model-viewer>
+    <div class="hint-badge">Kéo để xoay · Cuộn để zoom</div>
   </div>
 </body>
 </html>
