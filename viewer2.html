@@ -5,7 +5,7 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
   /* Khống chế body chiếm tối đa 100% màn hình pop-up */
-  html, body { width: 100%; height: 100vh; background: #1a1a1c; overflow: hidden; }
+  html, body { width: 70%; height: 70vh; background: #1a1a1c; overflow: hidden; }
   body { padding: 6px; display: flex; flex-direction: column; }
   
   .header-tabs { display: flex; justify-content: flex-start; margin-bottom: 6px; padding-left: 2px; }
@@ -17,11 +17,11 @@
     background: radial-gradient(circle at center, #3d3d42 0%, #252529 55%, #161618 100%); 
     border-radius: 10px; 
     position: relative; 
-    width: 100%; 
+    width: 70%; 
     overflow: hidden; 
   }
   
-  model-viewer { width: 100%; height: 100%; background: transparent; }
+  model-viewer { width: 70%; height: 70%; background: transparent; }
   .hint-badge { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.12); padding: 3px 12px; border-radius: 12px; font-size: 10px; color: #e5e5e5; pointer-events: none; }
 </style>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
